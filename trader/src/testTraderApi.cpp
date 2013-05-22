@@ -2,7 +2,7 @@
 //
 #include "TraderSpi.h"
 #include <ThostFtdcTraderApi.h>
-#include <iostreoam>
+#include <iostream>
 #include <sstream>
 #include <fstream>
 
@@ -23,8 +23,8 @@ TThostFtdcPasswordType  PASSWORD = "123456";			// 用户密码
 TThostFtdcInstrumentIDType INSTRUMENT_ID = "cu1309";	// 合约代码
 TThostFtdcDirectionType	DIRECTION = THOST_FTDC_D_Sell;	// 买卖方向
 TThostFtdcPriceType	LIMIT_PRICE = 38850;				// 价格
-char LOGIN_DATA = "i../../login_data/login.ini";
-void read_login_data(char)
+char LOGIN_DATA[] = "../../login_data/login.ini";
+void read_login_data(LOGIN_DATA);
 
 // 请求编号
 int iRequestID = 0;
