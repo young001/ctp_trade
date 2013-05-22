@@ -94,7 +94,7 @@ void CTraderSpi::ReqQrySettlementInfo()
 	ErrorReason(iResult);
 }
 
-void CTraderSpi::OnRspSettlementInfo(CThostFtdcSettlementInfoField *pSettlementInfo, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast)
+void CTraderSpi::OnRspQrySettlementInfo(CThostFtdcSettlementInfoField *pSettlementInfo, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast)
 {
 	std::cout << "--->>> " << "OnRspSettlementInfo" << std::endl;
 	if (bIsLast && !IsErrorRspInfo(pRspInfo))
