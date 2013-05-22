@@ -24,7 +24,7 @@ TThostFtdcInstrumentIDType INSTRUMENT_ID = "cu1309";	// 合约代码
 TThostFtdcDirectionType	DIRECTION = THOST_FTDC_D_Sell;	// 买卖方向
 TThostFtdcPriceType	LIMIT_PRICE = 38850;				// 价格
 char LOGIN_DATA = "i../../login_data/login.ini";
-void read_login_data()
+void read_login_data(char)
 
 // 请求编号
 int iRequestID = 0;
