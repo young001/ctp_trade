@@ -78,8 +78,8 @@ void CTraderSpi::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin,
 		std::cout << "-->>>session id =" << SESSION_ID<< std::endl;
 		std::cout << "-->>>orderref=" << ORDER_REF<< std::endl;
 		///投资者结算结果确认
-		ReqSettlementInfoConfirm();
-		//ReqQrySettlementInfo();
+		//ReqSettlementInfoConfirm();
+		ReqQrySettlementInfo();
 	}
 }
 
