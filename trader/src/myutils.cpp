@@ -1,9 +1,18 @@
 #include <fstream>
 #include <string>
+#include <sstream>
+#include <iostream>
 #include <map>
+#include <typeinfo>
+#include <algorithm>
 #include "myutils.h"
 
 using namespace std;
+
+void print(pair<const string,string> &p)
+{
+	cout<<p.second<<endl;
+}
 
 void read_login_data(char *login_data,map<string,string> &data_map)
 {
@@ -13,24 +22,33 @@ void read_login_data(char *login_data,map<string,string> &data_map)
 	if (!infile.is_open())
 	{
 		cout << "can not open login_data";
-		return false;
+		return ;
 	
 	}
 	stringstream sem;
 	sem << infile.rdbuf();
 	while(true)
 	{
-		sem >> config_line;
-		while(config_line)
+		if(sem.eof()) break;
+		while(sem >> config_line)
 		{
 			size_t pos = config_line.find('=');
-			if(pos == npos) continue;
-			string key = config_line.substr(0,pos);
-			string value = config_line.substr(pos+1);
-			data_map[key]=value;
+			if(pos != string::npos)
+			{
+				string key = config_line.substr(0,pos);
+				//cout <<typeid(key).name()<<endl;
+				string value = config_line.substr(pos+1);
+				//cout <<typeid(value).name()<<endl;
+				data_map[key]=value;
 
-		}
+			}
+			else
+			{
+				cout <<"bad input pair"<<endl;
+			}
+			}
 	}
+	//std::for_each(data_map.begin(),data_map.end(),print);
 	
 
 }
