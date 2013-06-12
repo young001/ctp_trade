@@ -12,13 +12,25 @@
 extern CThostFtdcTraderApi* pUserApi;
 
 // 配置参数
-extern char FRONT_ADDR[];		// 前置地址
-extern char BROKER_ID[];		// 经纪公司代码
-extern char INVESTOR_ID[];		// 投资者代码
-extern char PASSWORD[];			// 用户密码
-extern char INSTRUMENT_ID[];	// 合约代码
+extern char *FRONT_ADDR;		// 前置地址
+extern const char *BROKER_ID;		// 经纪公司代码
+extern const char *INVESTOR_ID;		// 投资者代码
+extern const char *PASSWORD;			// 用户密码
+extern const char *INSTRUMENT_ID;	// 合约代码
 extern TThostFtdcPriceType	LIMIT_PRICE;	// 价格
 extern TThostFtdcDirectionType	DIRECTION;	// 买卖方向
+
+//删除文件中多余的空格
+/*
+ *remove_space(FRONT_ADDR);
+ *remove_space(BROKER_ID);
+ *remove_space(INVESTOR_ID); 
+ *remove_space(PASSWORD);
+ *remove_space(INSTRUMENT_ID);
+ */
+
+
+
 
 // 请求编号
 extern int iRequestID;
