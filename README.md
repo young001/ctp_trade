@@ -4,4 +4,4 @@ ctp
 ctp
 ./configure
 make
-.bin/testTrader
+.bin64/run_ctp
